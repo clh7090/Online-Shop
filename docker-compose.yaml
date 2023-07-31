@@ -1,0 +1,48 @@
+version: "3"
+services:
+  react-frontend:
+    environment:
+      - REACT_APP_API_PORT=5000
+      - REACT_APP_API_BASE_URL=http://localhost:5000
+      - REACT_APP_FRONTEND_PORT=3000
+      - REACT_APP_FRONTEND_BASE_URL=http://localhost:3000
+    image: clh7090/online-shop-react-frontend
+    stdin_open: true
+    ports:
+      - "3000:3000"
+    networks:
+      - online-shop
+    tty: true
+    depends_on:
+      - express-backend
+  express-backend:
+    environment:
+      - STRIPE_SK=sk_test_51NYs...
+      - API_PORT=5000
+      - API_BASE_URL=http://localhost:5000
+      - MONGO_PORT=27017
+      - MONGO_DB_URI=mongodb://mongo:27017/online-shop
+      - FRONTEND_PORT=3000
+      - FRONTEND_SUCCESS_LINK=http://localhost:3000/success
+      - FRONTEND_CANCEL_LINK=http://localhost:3000/cancel
+    image: clh7090/online-shop-express-backend
+    ports:
+      - "5000:5000"
+    networks:
+      - online-shop
+    depends_on:
+      - mongo
+  mongo:
+    image: "mongo:latest"
+    ports:
+      - "27017:27017"
+    networks:
+      - online-shop
+    volumes:
+      - mongo-data:/data/db
+networks:
+  online-shop:
+    driver: bridge
+volumes:
+  mongo-data:
+    driver: local

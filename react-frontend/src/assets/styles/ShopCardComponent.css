@@ -1,0 +1,10 @@
+.cart-buttons {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+}
+
+.cart-button {
+  margin: .2rem .2rem .2rem .2rem;
+}

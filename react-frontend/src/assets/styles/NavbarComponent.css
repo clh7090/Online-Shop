@@ -1,0 +1,88 @@
+.nav {
+  display: flex;
+  padding: 1rem;
+  justify-content: space-between;
+  position: fixed;
+  background: white;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+}
+
+.logo-and-text {
+  margin-left: 10%;
+  display: flex;
+}
+
+.logo-and-text:hover {
+  cursor: pointer;
+}
+
+.logo {
+  margin-top: .4rem;
+  padding-right: 0rem;
+  display: flex;
+  justify-content: center;
+  align-items: "center";
+
+}
+
+.logo-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 5%;
+  font-size: 2.5rem;
+  font-weight: bolder;
+  color: black;
+}
+
+.cart-icon {
+  position: relative;
+  margin-right: 9%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0px solid;
+  border-radius: 0.5rem;
+  height: 3.5rem;
+  width: 3.5rem;
+  line-height: 2.5rem;
+  background: #eee;
+  color: black;
+  align-items: center;
+  padding: 0.8rem;
+  transition: background-color 0.1s;
+}
+
+.cart-icon:hover {
+  cursor: pointer;
+  color: white;
+  background: #60ab59;
+}
+
+.cart-count-badge {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: -0.6rem;
+  right: -0.6rem;
+  z-index: 2;
+  border: 0px solid;
+  border-radius: 5rem;
+  height: 1.5rem;
+  width: 1.5rem;
+  background: #f8292c;
+  color: white;
+}
+
+/* .modal {
+} */
+
+@media (max-width: 600px) {
+  .logo-text {
+    font-size: 2rem;
+  }
+}
