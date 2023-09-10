@@ -37,8 +37,14 @@ To setup Stripe,
 ---
 
 ### Run With Docker
+Once Docker is setup you must pull the images from Docker Hub.
 
-Once Docker is setup & you have all of your stripe product ids, you must configure the environment variables for docker compose & add data to Mongo.
+```
+$ docker pull clh7090/online-shop-react-frontend:latest
+$ docker pull clh7090/online-shop-express-backend:latest
+```
+
+Next, once you have all of your stripe product ids, you must configure the environment variables for docker compose & add data to Mongo.
 
 - Navigate to the docker-compose.yaml file & setup all of these values.
 
